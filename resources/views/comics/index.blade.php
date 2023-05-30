@@ -25,7 +25,7 @@
                     <td>{{ $comic['title'] }}</td>
                     <td>{{ $comic['price'] }} €</td>
                     <td>{{ $comic['type'] }}</td>
-                    <td>
+                    <td class="inline-block">
                         <a class="btn btn-success" href="{{ route('comics.show', $comic->id) }}"><i
                                 class="fa-solid fa-eye"></i></a>
                         <a class="btn btn-warning" href="{{ route('comics.edit', $comic->id) }}"><i

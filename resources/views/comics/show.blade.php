@@ -2,8 +2,14 @@
 
 @section('content')
     <div class="container">
-        <h2>Dati del fumetto {{ $comic->title }}</h2>
+
+        <div class="d-flex justify-content-between">
+            <h2>Dati del fumetto {{ $comic->title }}</h2>
+            <a class="btn btn-primary" href="{{ route('comics.index') }}">Torna alla lista dei fumetti</a>
+        </div>
+
         <img class="w-20" src="{{ $comic->thumb }}" alt="">
+
         <ul class="list-group">
             <li class="list-group-item">
                 {{ $comic['title'] }}
@@ -27,5 +33,15 @@
                 Tipologia: {{ $comic['type'] }}
             </li>
         </ul>
+
+        <div class="d-flex pt-3">
+            <a class="btn btn-warning mr-3" href="{{ route('comics.edit', $comic->id) }}">Modifica il fumetto</a>
+            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn btn-danger" onclick="return confirmDelete()">Cancella il fumetto</button>
+            </form>
+        </div>
+
     </div>
 @endsection
