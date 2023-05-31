@@ -23,7 +23,7 @@
                 <tr>
                     <th scope="row">{{ $comic['id'] }}</th>
                     <td>{{ $comic['title'] }}</td>
-                    <td>{{ $comic['price'] }} €</td>
+                    <td>{{ $comic['price'] }}</td>
                     <td>{{ $comic['type'] }}</td>
                     <td class="inline-block">
                         <a class="btn btn-success" href="{{ route('comics.show', $comic->id) }}"><i
